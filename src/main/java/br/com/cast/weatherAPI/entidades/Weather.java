@@ -3,12 +3,18 @@ package br.com.cast.weatherAPI.entidades;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 @Entity
 @Table(name="weather", schema="weather")
 public class Weather {
 	@Id
+	@SequenceGenerator(name="weatherSeq", allocationSize=1,initialValue=1,sequenceName="weather.weather_id_seq")
+	@GeneratedValue(generator="weatherSeq", strategy=GenerationType.SEQUENCE)
+	private Integer id;
 	private Date data;
 	private String temperatura_min;
 	private String temperatura_max;
@@ -18,6 +24,13 @@ public class Weather {
 	private String icon;
 	private String velocidadevento;
 	private String cidade;
+	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
 	
 	public String getIcon() {
 		return icon;

@@ -27,6 +27,7 @@ public class WeatherBusiness {
 			rwdto.setDescricao(w.getDescricao());
 			rwdto.setHumidade(w.getHumidade());
 			rwdto.setPressao(w.getPressao());
+			rwdto.setIcon(w.getIcon());
 			rwdto.setTemperatura_max(w.getTemperatura_max());
 			rwdto.setTemperatura_min(w.getTemperatura_min());
 			rwdto.setVelocidadevento(w.getVelocidadevento());
@@ -56,6 +57,7 @@ public class WeatherBusiness {
 			w.setData(wdto.getData());
 			w.setDescricao(wdto.getDescricao());
 			w.setHumidade(wdto.getHumidade());
+			w.setIcon(wdto.getIcon());
 			w.setPressao(wdto.getPressao());
 			w.setTemperatura_max(wdto.getTemperatura_max());
 			w.setTemperatura_min(wdto.getTemperatura_min());
