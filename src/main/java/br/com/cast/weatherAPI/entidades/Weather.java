@@ -1,15 +1,37 @@
 package br.com.cast.weatherAPI.entidades;
 
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+@Entity
+@Table(name="weather", schema="weather")
 public class Weather {
-	
+	@Id
+	private Date data;
 	private String temperatura_min;
 	private String temperatura_max;
 	private String pressao;
 	private String humidade;
 	private String descricao;
+	private String icon;
 	private String velocidadevento;
-	private String data;
+	private String cidade;
 	
+	public String getIcon() {
+		return icon;
+	}
+	public void setIcon(String icon) {
+		this.icon = icon;
+	}
+	
+	public String getCidade() {
+		return cidade;
+	}
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
 	public String getTemperatura_min() {
 		return temperatura_min;
 	}
@@ -46,12 +68,13 @@ public class Weather {
 	public void setVelocidadevento(String velocidadevento) {
 		this.velocidadevento = velocidadevento;
 	}
-	public String getData() {
+	public Date getData() {
 		return data;
 	}
-	public void setData(String data) {
+	public void setData(Date data) {
 		this.data = data;
 	}
+
 	
 	
 

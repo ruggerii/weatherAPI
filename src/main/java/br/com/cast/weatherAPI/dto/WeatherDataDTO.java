@@ -1,12 +1,23 @@
 package br.com.cast.weatherAPI.dto;
 
+import java.util.Date;
 import java.util.List;
 
 public class WeatherDataDTO {
+
 	private WeatherMainDTO main;
 	private List<WeatherDescriptionDTO> weather;
 	private WeatherWindDTO wind;
 	private String dt_txt;
+	
+
+	public String getDt_txt() {
+		return dt_txt;
+	}
+
+	public void setDt_txt(String dt_txt) {
+		this.dt_txt = dt_txt;
+	}
 
 	public WeatherMainDTO getMain() {
 		return main;
@@ -32,12 +43,6 @@ public class WeatherDataDTO {
 		this.wind = wind;
 	}
 
-	public String getDt_txt() {
-		return dt_txt;
-	}
 
-	public void setDt_txt(String dt_txt) {
-		this.dt_txt = dt_txt;
-	}
 
 }
