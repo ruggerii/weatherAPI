@@ -54,7 +54,6 @@ public class ResultWeatherDTO {
 		Map<Date, String> mapaDias = new HashMap<Date, String>();
 		for (WeatherDataDTO w : dto.getList()) {
 			Date day = WeatherClient.stringToDate(w.getDt_txt());
-			
 			if (!mapaDias.containsKey(day)) {
 				mapaDias.put(day, cidade);
 				rwdto = new ResultWeatherDTO();

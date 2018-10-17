@@ -3,6 +3,15 @@
     border: 1px black solid;
 }
 #corpo{
-    height: 1400px;
+    
     width: 290px;
+}
+
+#temp_top{
+    display: flex;
+    justify-content: space-between;
+}
+#img_corpo{
+    margin-right: 40px;
+    height: 90px;
 }

@@ -3,6 +3,9 @@ $(function(){
     $('#search').click(function(){
         $('#container').load('temp.html', function(){
             $.get('http://localhost:8080?q='+$('#cidade').val(), function(data){
+                $('#img_top').attr('src', 'http://openweathermap.org/img/w/'+ data[0].icon+".png");
+                $('#img_corpo').attr('src', 'http://openweathermap.org/img/w/'+ data[0].icon+".png");
+                $('#descricao').html(data[0].descricao);
                 var dia = new Date(data[0].data).getDay();
                 if(dia == 1)dia = 'Domingo'; 
                 else if(dia == 2) dia = 'Segunda-Feira';

@@ -28,10 +28,14 @@ public class WeatherClient {
 
 	public List<ResultWeatherDTO> fetchEvents(String cidade) {
 		List<ResultWeatherDTO> lista = wb.buscarCidade(cidade);
-		if (lista.isEmpty() || lista.size() < 5) {
+		if (lista.size() < 5) {
 			WeatherDTO wdto = this.restTemplate.getForObject(EVENT_GET, WeatherDTO.class, cidade, APP_ID);
-			lista = ResultWeatherDTO.fromResultWeatherDTO(wdto, cidade);
+			
+			if(!lista.isEmpty()) {
 			wb.deletarDados(cidade);
+			}
+			
+			lista = ResultWeatherDTO.fromResultWeatherDTO(wdto, cidade);
 			wb.inserirDados(lista);
 		}
 

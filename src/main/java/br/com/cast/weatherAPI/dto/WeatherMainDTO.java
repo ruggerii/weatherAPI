@@ -12,7 +12,7 @@ public class WeatherMainDTO {
 			@JsonProperty("temp_max") String temp_max,
 			@JsonProperty("pressure") String pressure,
 			@JsonProperty("humidity") String humidity) {
-		this.temp_min = temp_max;
+		this.temp_min = temp_min;
 		this.temp_max = temp_max;
 		this.pressure = pressure;
 		this.humidity = humidity;
